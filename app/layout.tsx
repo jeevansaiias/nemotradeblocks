@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "TradeBlocks",
-    template: "%s | TradeBlocks",
+    default: "NemoAnalytics",
+    template: "%s | NemoAnalytics",
   },
   description:
-    "Modern analytics workspace for evaluating trading performance and building resilient strategies.",
+    "Options analytics platform to explore your portfolio with custom performance views and simulations.",
 };
 
 export default function RootLayout({
