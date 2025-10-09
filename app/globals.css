@@ -71,16 +71,16 @@
 :root {
   --radius: 0.75rem;
   /* GalaTrades palette */
-  --primary: #64cfe4;
+  --primary: #caeff2;
   /* GalaTrades primary */
   --secondary: #ffb2b2;
   /* GalaTrades secondary */
-  --accent: #671f4d;
+  --accent: #eebfbf;
   /* GalaTrades accent */
-  --muted: #eebfbf;
-  /* GalaTrades muted */
-  --highlight: #caeff2;
+  --highlight: #671f4d;
   /* GalaTrades highlight */
+  --muted: #64cfe4;
+  /* GalaTrades muted */
 
   /* keep background/foreground sensible defaults */
   --background: #f8fafc;
