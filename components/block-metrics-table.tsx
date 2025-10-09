@@ -52,7 +52,7 @@ const metrics: MetricRow[] = [
 ]
 
 const statusClass: Record<MetricRow["status"], string> = {
-  positive: "text-emerald-600 dark:text-emerald-400",
+  positive: "text-muted dark:text-muted/80",
   neutral: "text-muted-foreground",
   negative: "text-rose-500 dark:text-rose-400",
 }
@@ -67,7 +67,7 @@ export function BlockMetricsTable() {
             Snapshot of profitability, risk, and consistency for the active block.
           </p>
         </div>
-        <span className="hidden rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium uppercase tracking-wide text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300 sm:inline-flex">
+  <span className="hidden rounded-full bg-muted/20 px-3 py-1 text-xs font-medium uppercase tracking-wide text-muted dark:bg-muted/10 dark:text-muted/80 sm:inline-flex">
           Auto-updated
         </span>
       </div>

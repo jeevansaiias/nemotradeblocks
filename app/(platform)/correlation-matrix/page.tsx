@@ -4,15 +4,15 @@ import { ChartWrapper } from "@/components/performance-charts/chart-wrapper";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
 } from "@/components/ui/select";
 import {
-  calculateCorrelationAnalytics,
-  calculateCorrelationMatrix,
+    calculateCorrelationAnalytics,
+    calculateCorrelationMatrix,
 } from "@/lib/calculations/correlation";
 import { getTradesByBlock } from "@/lib/db/trades-store";
 import { Trade } from "@/lib/models/trade";
@@ -193,12 +193,12 @@ export default function CorrelationMatrixPage() {
   return (
     <div className="space-y-6">
       {/* Explanation Banner */}
-      <Card className="border-l-4 border-l-blue-500 dark:border-l-blue-400">
+  <Card className="border-l-4 border-l-primary dark:border-l-primary/80">
         <CardContent className="pt-6">
           <div className="space-y-4">
             {/* Title */}
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:text-primary/80">
                 <Info className="h-5 w-5" />
               </div>
               <h3 className="text-base font-semibold">What does this show?</h3>

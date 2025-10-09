@@ -2,11 +2,11 @@ import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
 
 const GalaTrades = {
-  primary: '#64cfe4',
+  primary: '#caeff2',
   secondary: '#ffb2b2',
-  accent: '#671f4d',
-  muted: '#eebfbf',
-  highlight: '#caeff2',
+  accent: '#eebfbf',
+  highlight: '#671f4d',
+  muted: '#64cfe4',
 }
 
 const config: Config = {
@@ -22,8 +22,8 @@ const config: Config = {
         primary: GalaTrades.primary,
         secondary: GalaTrades.secondary,
         accent: GalaTrades.accent,
-        muted: GalaTrades.muted,
         highlight: GalaTrades.highlight,
+        muted: GalaTrades.muted,
         // keep semantic aliases
         'sidebar-accent': GalaTrades.highlight,
       },

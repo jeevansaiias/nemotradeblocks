@@ -1,25 +1,25 @@
 "use client";
 
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -27,46 +27,46 @@ import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { addDailyLogEntries, addTrades, createBlock } from "@/lib/db";
 import { REQUIRED_DAILY_LOG_COLUMNS } from "@/lib/models/daily-log";
 import {
-  REQUIRED_TRADE_COLUMNS,
-  TRADE_COLUMN_ALIASES,
+    REQUIRED_TRADE_COLUMNS,
+    TRADE_COLUMN_ALIASES,
 } from "@/lib/models/trade";
 import { calculateInitialCapital } from "@/lib/processing/capital-calculator";
 import {
-  DailyLogProcessingProgress,
-  DailyLogProcessingResult,
-  DailyLogProcessor,
+    DailyLogProcessingProgress,
+    DailyLogProcessingResult,
+    DailyLogProcessor,
 } from "@/lib/processing/daily-log-processor";
 import {
-  TradeProcessingProgress,
-  TradeProcessingResult,
-  TradeProcessor,
+    TradeProcessingProgress,
+    TradeProcessingResult,
+    TradeProcessor,
 } from "@/lib/processing/trade-processor";
 import { useBlockStore } from "@/lib/stores/block-store";
 import {
-  findMissingHeaders,
-  normalizeHeaders,
-  parseCsvLine,
+    findMissingHeaders,
+    normalizeHeaders,
+    parseCsvLine,
 } from "@/lib/utils/csv-headers";
 import {
-  Activity,
-  AlertCircle,
-  BarChart3,
-  Calendar,
-  CheckCircle,
-  Info,
-  Loader2,
-  Plus,
-  Save,
-  Trash2,
-  Upload,
-  X,
+    Activity,
+    AlertCircle,
+    BarChart3,
+    Calendar,
+    CheckCircle,
+    Info,
+    Loader2,
+    Plus,
+    Save,
+    Trash2,
+    Upload,
+    X,
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -1026,17 +1026,17 @@ export function BlockDialog({
             }
             ${
               fileState.status === "uploaded"
-                ? "border-green-500 bg-green-50 dark:bg-green-950/20"
+                ? "border-muted bg-muted/20 dark:bg-muted/20"
                 : ""
             }
             ${
               fileState.status === "existing"
-                ? "border-blue-500 bg-blue-50 dark:bg-blue-950/20"
+                ? "border-primary bg-primary/20 dark:bg-primary/20"
                 : ""
             }
             ${
               fileState.status === "error"
-                ? "border-red-500 bg-red-50 dark:bg-red-950/20"
+                ? "border-secondary bg-secondary/20 dark:bg-secondary/20"
                 : ""
             }
             ${
@@ -1206,7 +1206,7 @@ export function BlockDialog({
         </div>
 
         {isTradeLog && missingStrategyCount > 0 && (
-          <div className="rounded-md border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/20 dark:text-amber-200 space-y-2">
+          <div className="rounded-md border border-accent/60 bg-accent/20 p-4 text-sm text-accent dark:border-accent/80 dark:bg-accent/20 dark:text-accent/80 space-y-2">
             <div className="font-medium flex items-center justify-between gap-2">
               <span>Strategy name required</span>
               <Badge
@@ -1320,7 +1320,7 @@ export function BlockDialog({
 
             {/* Processing Status */}
             {isProcessing && (
-              <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+              <div className="bg-primary/20 dark:bg-primary/20 border border-primary/60 dark:border-primary/80 rounded-lg p-4">
                 <div className="flex items-center gap-3">
                   <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
                   <div>
@@ -1339,7 +1339,7 @@ export function BlockDialog({
 
             {/* Errors */}
             {processingErrors.length > 0 && (
-              <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+              <div className="bg-secondary/20 dark:bg-secondary/20 border border-secondary/60 dark:border-secondary/80 rounded-lg p-4">
                 <div className="flex items-start gap-3">
                   <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <div className="space-y-2">
@@ -1349,7 +1349,7 @@ export function BlockDialog({
                     <ul className="text-sm text-red-700 dark:text-red-300 space-y-1">
                       {processingErrors.map((error, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <span className="text-red-500">•</span>
+                          <span className="text-secondary">•</span>
                           <span>{error}</span>
                         </li>
                       ))}

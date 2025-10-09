@@ -1,11 +1,11 @@
 "use client"
 
-import React from 'react'
-import { usePerformanceStore } from '@/lib/stores/performance-store'
-import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { TrendingUp, TrendingDown, Calendar, Target, AlertTriangle } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
+import { usePerformanceStore } from '@/lib/stores/performance-store'
 import { cn } from '@/lib/utils'
+import { AlertTriangle, Calendar, Target, TrendingDown, TrendingUp } from 'lucide-react'
+import React from 'react'
 
 interface PerformanceMetricsProps {
   className?: string
@@ -42,14 +42,14 @@ function MetricCard({ title, value, icon, trend = 'neutral', subtitle, format = 
   }
 
   const trendColors = {
-    positive: 'text-emerald-600 dark:text-emerald-400',
-    negative: 'text-red-600 dark:text-red-400',
+    positive: 'text-muted dark:text-muted/80',
+    negative: 'text-secondary dark:text-secondary/80',
     neutral: 'text-foreground'
   }
 
   const bgColors = {
-    positive: 'bg-emerald-50 dark:bg-emerald-950/20',
-    negative: 'bg-red-50 dark:bg-red-950/20',
+    positive: 'bg-muted/20 dark:bg-muted/20',
+    negative: 'bg-secondary/20 dark:bg-secondary/20',
     neutral: 'bg-muted/50'
   }
 
@@ -172,14 +172,14 @@ export function PerformanceMetrics({ className }: PerformanceMetricsProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 pt-4 border-t">
           <div className="text-center">
             <div className="text-sm text-muted-foreground mb-1">Best Month</div>
-            <div className="font-semibold text-emerald-600 dark:text-emerald-400">
+            <div className="font-semibold text-muted dark:text-muted/80">
               {bestMonth}
             </div>
           </div>
 
           <div className="text-center">
             <div className="text-sm text-muted-foreground mb-1">Worst Month</div>
-            <div className="font-semibold text-red-600 dark:text-red-400">
+            <div className="font-semibold text-secondary dark:text-secondary/80">
               {worstMonth}
             </div>
           </div>
@@ -191,7 +191,7 @@ export function PerformanceMetrics({ className }: PerformanceMetricsProps) {
 
           <div className="text-center">
             <div className="text-sm text-muted-foreground mb-1">Win Streak</div>
-            <div className="font-semibold text-emerald-600 dark:text-emerald-400">
+            <div className="font-semibold text-muted dark:text-muted/80">
               {portfolioStats.maxWinStreak} trades
             </div>
           </div>

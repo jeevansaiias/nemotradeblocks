@@ -2,9 +2,9 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
 import { HelpCircle, TrendingDown, TrendingUp } from "lucide-react";
@@ -67,9 +67,9 @@ export function MetricCard({
   const getTrendIcon = () => {
     if (!trend || trend === "neutral") return null;
     return trend === "up" ? (
-      <TrendingUp className="w-3 h-3 text-green-500" />
+  <TrendingUp className="w-3 h-3 text-muted" />
     ) : (
-      <TrendingDown className="w-3 h-3 text-red-500" />
+  <TrendingDown className="w-3 h-3 text-secondary" />
     );
   };
 
