@@ -47,7 +47,7 @@ export function SidebarFooterLegal() {
   return (
     <div className="space-y-4 border-t border-sidebar-border/80 px-3 pb-6 pt-4 text-[0.72rem] leading-relaxed text-muted-foreground">
       <Alert className="gap-2">
-  <AlertTriangle className="h-4 w-4 text-accent-500" aria-hidden />
+        <AlertTriangle className="h-4 w-4 text-amber-500" aria-hidden />
         <div className="space-y-1">
           <AlertTitle className="text-xs uppercase tracking-wide text-muted-foreground">
             Important Notice
@@ -71,7 +71,7 @@ export function SidebarFooterLegal() {
                 <DialogHeader className="gap-2 text-left">
                   <div className="flex items-center gap-2 text-base font-semibold text-foreground">
                     <AlertTriangle
-                      className="h-5 w-5 text-accent-500"
+                      className="h-5 w-5 text-amber-500"
                       aria-hidden
                     />
                     Important Disclaimer

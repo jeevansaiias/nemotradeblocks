@@ -7,21 +7,21 @@ import { StrategyBreakdownTable } from "@/components/strategy-breakdown-table";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { PortfolioStatsCalculator } from "@/lib/calculations/portfolio-stats";
-import { getDailyLogsByBlock, getTradesByBlock } from "@/lib/db";
-import { DailyLogEntry } from "@/lib/models/daily-log";
-import { PortfolioStats, StrategyStats } from "@/lib/models/portfolio-stats";
-import { Trade } from "@/lib/models/trade";
-import { buildPerformanceSnapshot } from "@/lib/services/performance-snapshot";
-import { useBlockStore } from "@/lib/stores/block-store";
 import {
-    AlertTriangle,
-    BarChart3,
-    Calendar,
-    Target,
-    TrendingUp,
+  AlertTriangle,
+  BarChart3,
+  Calendar,
+  Target,
+  TrendingUp,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { useBlockStore } from "@/lib/stores/block-store";
+import { getTradesByBlock, getDailyLogsByBlock } from "@/lib/db";
+import { Trade } from "@/lib/models/trade";
+import { DailyLogEntry } from "@/lib/models/daily-log";
+import { PortfolioStatsCalculator } from "@/lib/calculations/portfolio-stats";
+import { buildPerformanceSnapshot } from "@/lib/services/performance-snapshot";
+import { PortfolioStats, StrategyStats } from "@/lib/models/portfolio-stats";
 
 // Strategy options will be dynamically generated from trades
 
@@ -263,7 +263,7 @@ export default function BlockStatsPage() {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="text-center max-w-md">
-          <AlertTriangle className="h-12 w-12 text-secondary-500 mx-auto mb-4" />
+          <AlertTriangle className="h-12 w-12 text-red-500 mx-auto mb-4" />
           <h3 className="text-lg font-semibold mb-2">Error Loading Data</h3>
           <p className="text-muted-foreground mb-4">{dataError}</p>
         </div>

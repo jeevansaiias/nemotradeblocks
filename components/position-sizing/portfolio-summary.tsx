@@ -5,9 +5,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Separator } from "@/components/ui/separator";
 import { KellyMetrics } from "@/lib/calculations/kelly";
@@ -174,7 +174,7 @@ export function PortfolioSummary({
                 </HoverCardContent>
               </HoverCard>
             </div>
-            <p className="text-lg font-semibold text-muted-600">
+            <p className="text-lg font-semibold text-green-600">
               ${portfolioMetrics.avgWin.toLocaleString(undefined, { maximumFractionDigits: 0 })}
             </p>
           </div>
@@ -205,7 +205,7 @@ export function PortfolioSummary({
                 </HoverCardContent>
               </HoverCard>
             </div>
-            <p className="text-lg font-semibold text-secondary-600">
+            <p className="text-lg font-semibold text-red-600">
               -$
               {portfolioMetrics.avgLoss.toLocaleString(undefined, { maximumFractionDigits: 0 })}
             </p>

@@ -2,20 +2,20 @@
 
 import { Card } from "@/components/ui/card";
 import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import type { MonteCarloResult } from "@/lib/calculations/monte-carlo";
 import {
-    AlertOctagon,
-    AlertTriangle,
-    HelpCircle,
-    Percent,
-    Star,
-    Target,
-    TrendingDown,
-    TrendingUp,
+  AlertOctagon,
+  AlertTriangle,
+  HelpCircle,
+  Percent,
+  Star,
+  Target,
+  TrendingDown,
+  TrendingUp,
 } from "lucide-react";
 
 interface StatisticsCardsProps {
@@ -46,7 +46,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
         <Card className="p-4">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-muted-500" />
+              <TrendingUp className="h-5 w-5 text-green-500" />
               <span className="text-sm font-medium text-muted-foreground">
                 Expected Return
               </span>
@@ -94,7 +94,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
         <Card className="p-4">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-2">
-              <Percent className="h-5 w-5 text-primary-500" />
+              <Percent className="h-5 w-5 text-blue-500" />
               <span className="text-sm font-medium text-muted-foreground">
                 Probability of Profit
               </span>
@@ -142,7 +142,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
         <Card className="p-4">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-secondary-500" />
+              <AlertTriangle className="h-5 w-5 text-red-500" />
               <span className="text-sm font-medium text-muted-foreground">
                 Value at Risk
               </span>
@@ -189,7 +189,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
         <Card className="p-4">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-2">
-              <TrendingDown className="h-5 w-5 text-accent-500" />
+              <TrendingDown className="h-5 w-5 text-orange-500" />
               <span className="text-sm font-medium text-muted-foreground">
                 Max Drawdown
               </span>
@@ -241,7 +241,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
           <Card className="p-4">
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center gap-2">
-                <AlertOctagon className="h-5 w-5 text-secondary-500" />
+                <AlertOctagon className="h-5 w-5 text-red-500" />
                 <span className="text-sm font-medium text-muted-foreground">
                   Worst Case
                 </span>
@@ -276,7 +276,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
               </HoverCard>
             </div>
             <div>
-              <div className="text-2xl font-bold text-secondary-600 dark:text-secondary-400">
+              <div className="text-2xl font-bold text-red-600 dark:text-red-400">
                 {(statistics.valueAtRisk.p5 * 100).toFixed(1)}%
               </div>
               <div className="text-xs text-muted-foreground mt-1">
@@ -289,7 +289,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
           <Card className="p-4">
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-primary-500" />
+                <Target className="h-5 w-5 text-blue-500" />
                 <span className="text-sm font-medium text-muted-foreground">
                   Most Likely
                 </span>
@@ -337,7 +337,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
           <Card className="p-4">
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center gap-2">
-                <Star className="h-5 w-5 text-muted-500" />
+                <Star className="h-5 w-5 text-green-500" />
                 <span className="text-sm font-medium text-muted-foreground">
                   Best Case
                 </span>
@@ -372,7 +372,7 @@ export function StatisticsCards({ result }: StatisticsCardsProps) {
               </HoverCard>
             </div>
             <div>
-              <div className="text-2xl font-bold text-muted-600 dark:text-muted-400">
+              <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                 {(bestCaseReturn * 100).toFixed(1)}%
               </div>
               <div className="text-xs text-muted-foreground mt-1">

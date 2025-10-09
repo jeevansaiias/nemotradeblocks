@@ -4,25 +4,25 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
 import {
-    ArrowDown,
-    ArrowUp,
-    ArrowUpDown,
-    HelpCircle,
-    TrendingUp,
+  ArrowDown,
+  ArrowUp,
+  ArrowUpDown,
+  HelpCircle,
+  TrendingUp,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -137,16 +137,16 @@ export function StrategyBreakdownTable({
   const formatPercentage = (value: number) => `${value.toFixed(1)}%`;
 
   const getProfitFactorColor = (value: number) => {
-  if (value >= 2) return "text-muted-600 dark:text-muted-400";
-  if (value >= 1.5) return "text-muted-500 dark:text-muted-500";
-  if (value >= 1) return "text-accent-600 dark:text-accent-400";
-  return "text-secondary-600 dark:text-secondary-400";
+    if (value >= 2) return "text-green-600 dark:text-green-400";
+    if (value >= 1.5) return "text-green-500 dark:text-green-500";
+    if (value >= 1) return "text-yellow-600 dark:text-yellow-400";
+    return "text-red-600 dark:text-red-400";
   };
 
   const getPLColor = (value: number) => {
     return value >= 0
-  ? "text-muted-600 dark:text-muted-400"
-  : "text-secondary-600 dark:text-secondary-400";
+      ? "text-green-600 dark:text-green-400"
+      : "text-red-600 dark:text-red-400";
   };
 
   interface TooltipContent {
@@ -214,7 +214,7 @@ export function StrategyBreakdownTable({
     <Card className={cn("", className)}>
       <CardHeader className="pb-4">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-accent-100 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400">
+          <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400">
             <TrendingUp className="w-4 h-4" />
           </div>
           <CardTitle className="text-lg">Strategy Breakdown</CardTitle>
@@ -288,10 +288,10 @@ export function StrategyBreakdownTable({
                   <TableCell className="text-right">
                     {formatPercentage(row.winRate)}
                   </TableCell>
-                  <TableCell className="text-right text-muted-600 dark:text-muted-400">
+                  <TableCell className="text-right text-green-600 dark:text-green-400">
                     {formatCurrency(row.avgWin)}
                   </TableCell>
-                  <TableCell className="text-right text-secondary-600 dark:text-secondary-400">
+                  <TableCell className="text-right text-red-600 dark:text-red-400">
                     {formatCurrency(row.avgLoss)}
                   </TableCell>
                   <TableCell

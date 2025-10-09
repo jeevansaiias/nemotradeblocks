@@ -1,9 +1,9 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import type { Trade } from "@/lib/models/trade";
-import { Activity, Calendar, TrendingUp } from "lucide-react";
+import { TrendingUp, Calendar, Activity } from "lucide-react";
 import { useMemo } from "react";
+import type { Trade } from "@/lib/models/trade";
 
 interface TradingFrequencyCardProps {
   trades: Trade[];
@@ -96,7 +96,7 @@ export function TradingFrequencyCard({ trades, tradesPerYear }: TradingFrequency
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
-              <TrendingUp className="h-5 w-5 text-primary-500" />
+              <TrendingUp className="h-5 w-5 text-blue-500" />
               <span className="text-2xl font-bold">{tradesPerYear.toLocaleString()}</span>
               <span className="text-lg text-muted-foreground">trades/year</span>
             </div>

@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useBlockStore, type Block } from "@/lib/stores/block-store";
-import { Activity, Calendar, Grid3X3, List, Plus, RotateCcw, Search } from "lucide-react";
-import { useState } from "react";
+import { Activity, Calendar, Grid3X3, List, Plus, Search, RotateCcw } from "lucide-react";
+import React, { useState } from "react";
 
 function BlockCard({
   block,
@@ -180,9 +180,9 @@ export default function BlockManagementPage() {
         </div>
 
         {error && (
-          <div className="bg-secondary-50 dark:bg-secondary-950/20 border border-secondary-200 dark:border-secondary-800 rounded-lg p-4">
-            <p className="text-secondary-900 dark:text-secondary-100 font-medium">Error loading blocks</p>
-            <p className="text-secondary-700 dark:text-secondary-300 text-sm">{error}</p>
+          <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+            <p className="text-red-900 dark:text-red-100 font-medium">Error loading blocks</p>
+            <p className="text-red-700 dark:text-red-300 text-sm">{error}</p>
             <Button
               variant="outline"
               size="sm"

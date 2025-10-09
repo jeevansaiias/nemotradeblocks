@@ -1,25 +1,25 @@
 "use client";
 
 import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -27,46 +27,46 @@ import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { addDailyLogEntries, addTrades, createBlock } from "@/lib/db";
 import { REQUIRED_DAILY_LOG_COLUMNS } from "@/lib/models/daily-log";
 import {
-    REQUIRED_TRADE_COLUMNS,
-    TRADE_COLUMN_ALIASES,
+  REQUIRED_TRADE_COLUMNS,
+  TRADE_COLUMN_ALIASES,
 } from "@/lib/models/trade";
 import { calculateInitialCapital } from "@/lib/processing/capital-calculator";
 import {
-    DailyLogProcessingProgress,
-    DailyLogProcessingResult,
-    DailyLogProcessor,
+  DailyLogProcessingProgress,
+  DailyLogProcessingResult,
+  DailyLogProcessor,
 } from "@/lib/processing/daily-log-processor";
 import {
-    TradeProcessingProgress,
-    TradeProcessingResult,
-    TradeProcessor,
+  TradeProcessingProgress,
+  TradeProcessingResult,
+  TradeProcessor,
 } from "@/lib/processing/trade-processor";
 import { useBlockStore } from "@/lib/stores/block-store";
 import {
-    findMissingHeaders,
-    normalizeHeaders,
-    parseCsvLine,
+  findMissingHeaders,
+  normalizeHeaders,
+  parseCsvLine,
 } from "@/lib/utils/csv-headers";
 import {
-    Activity,
-    AlertCircle,
-    BarChart3,
-    Calendar,
-    CheckCircle,
-    Info,
-    Loader2,
-    Plus,
-    Save,
-    Trash2,
-    Upload,
-    X,
+  Activity,
+  AlertCircle,
+  BarChart3,
+  Calendar,
+  CheckCircle,
+  Info,
+  Loader2,
+  Plus,
+  Save,
+  Trash2,
+  Upload,
+  X,
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -1026,17 +1026,17 @@ export function BlockDialog({
             }
             ${
               fileState.status === "uploaded"
-                ? "border-muted bg-muted/20 dark:bg-muted/20"
+                ? "border-green-500 bg-green-50 dark:bg-green-950/20"
                 : ""
             }
             ${
               fileState.status === "existing"
-                ? "border-primary bg-primary/20 dark:bg-primary/20"
+                ? "border-blue-500 bg-blue-50 dark:bg-blue-950/20"
                 : ""
             }
             ${
               fileState.status === "error"
-                ? "border-secondary bg-secondary/20 dark:bg-secondary/20"
+                ? "border-red-500 bg-red-50 dark:bg-red-950/20"
                 : ""
             }
             ${
@@ -1063,8 +1063,8 @@ export function BlockDialog({
           {fileState.status === "processing" && fileState.file ? (
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded">
-                  <Loader2 className="w-5 h-5 text-primary-600 animate-spin" />
+                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded">
+                  <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
                 </div>
                 <div className="flex-1">
                   <p className="font-medium">{fileState.file.name}</p>
@@ -1087,8 +1087,8 @@ export function BlockDialog({
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-muted-100 dark:bg-muted-900/30 rounded">
-                    <CheckCircle className="w-5 h-5 text-muted-600" />
+                  <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
                     <p className="font-medium">{fileState.file.name}</p>
@@ -1149,8 +1149,8 @@ export function BlockDialog({
           ) : fileState.status === "existing" && fileState.existingFileName ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded">
-                  <Icon className="w-5 h-5 text-primary-600" />
+                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded">
+                  <Icon className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
                   <p className="font-medium">{fileState.existingFileName}</p>
@@ -1171,14 +1171,14 @@ export function BlockDialog({
             </div>
           ) : fileState.status === "error" ? (
             <div className="flex items-start gap-3 text-left">
-              <div className="p-2 bg-secondary-100 dark:bg-secondary-900/30 rounded-full">
-                <AlertCircle className="w-5 h-5 text-secondary-600" />
+              <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-full">
+                <AlertCircle className="w-5 h-5 text-red-600" />
               </div>
               <div className="space-y-1">
-                <p className="text-sm font-medium text-secondary-700 dark:text-secondary-400">
+                <p className="text-sm font-medium text-red-700 dark:text-red-400">
                   {errorHeading}
                 </p>
-                <p className="text-sm text-secondary-600 dark:text-secondary-300 leading-snug">
+                <p className="text-sm text-red-600 dark:text-red-300 leading-snug">
                   {errorMessage || fileState.error}
                 </p>
                 <p className="text-xs text-muted-foreground">
@@ -1206,12 +1206,12 @@ export function BlockDialog({
         </div>
 
         {isTradeLog && missingStrategyCount > 0 && (
-          <div className="rounded-md border border-accent/60 bg-accent/20 p-4 text-sm text-accent dark:border-accent/80 dark:bg-accent/20 dark:text-accent/80 space-y-2">
+          <div className="rounded-md border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/20 dark:text-amber-200 space-y-2">
             <div className="font-medium flex items-center justify-between gap-2">
               <span>Strategy name required</span>
               <Badge
                 variant="outline"
-                className="text-xs text-accent-900 dark:text-accent-200 border-accent-400/70"
+                className="text-xs text-amber-900 dark:text-amber-200 border-amber-400/70"
               >
                 {missingStrategyCount} trade
                 {missingStrategyCount === 1 ? "" : "s"}
@@ -1241,12 +1241,12 @@ export function BlockDialog({
               </Button>
             </div>
             {!strategyOverride.trim() && (
-              <p className="text-xs text-accent-800 dark:text-accent-300">
+              <p className="text-xs text-amber-800 dark:text-amber-300">
                 Entry required before you can create the block.
               </p>
             )}
             {strategyOverride.trim() && (
-              <p className="text-xs text-accent-800/80 dark:text-accent-300/80">
+              <p className="text-xs text-amber-800/80 dark:text-amber-300/80">
                 Applying &quot;{strategyOverride.trim()}&quot; to{" "}
                 {missingStrategyCount} trade
                 {missingStrategyCount === 1 ? "" : "s"}.
@@ -1320,15 +1320,15 @@ export function BlockDialog({
 
             {/* Processing Status */}
             {isProcessing && (
-              <div className="bg-primary/20 dark:bg-primary/20 border border-primary/60 dark:border-primary/80 rounded-lg p-4">
+              <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                 <div className="flex items-center gap-3">
-                  <Loader2 className="w-5 h-5 text-primary-600 animate-spin" />
+                  <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
                   <div>
-                    <p className="font-medium text-primary-900 dark:text-primary-100">
+                    <p className="font-medium text-blue-900 dark:text-blue-100">
                       Processing Files
                     </p>
                     {processingStep && (
-                      <p className="text-sm text-primary-700 dark:text-primary-300">
+                      <p className="text-sm text-blue-700 dark:text-blue-300">
                         {processingStep}
                       </p>
                     )}
@@ -1339,17 +1339,17 @@ export function BlockDialog({
 
             {/* Errors */}
             {processingErrors.length > 0 && (
-              <div className="bg-secondary/20 dark:bg-secondary/20 border border-secondary/60 dark:border-secondary/80 rounded-lg p-4">
+              <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
                 <div className="flex items-start gap-3">
-                  <AlertCircle className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
+                  <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <div className="space-y-2">
-                    <p className="font-medium text-secondary-900 dark:text-secondary-100">
+                    <p className="font-medium text-red-900 dark:text-red-100">
                       Processing Errors
                     </p>
-                    <ul className="text-sm text-secondary-700 dark:text-secondary-300 space-y-1">
+                    <ul className="text-sm text-red-700 dark:text-red-300 space-y-1">
                       {processingErrors.map((error, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <span className="text-secondary">•</span>
+                          <span className="text-red-500">•</span>
                           <span>{error}</span>
                         </li>
                       ))}
