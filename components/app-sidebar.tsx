@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  IconChartHistogram,
-  IconGauge,
-  IconLayoutDashboard,
-  IconReportAnalytics,
-  IconRouteSquare,
-  IconStack2,
+    IconChartHistogram,
+    IconGauge,
+    IconLayoutDashboard,
+    IconReportAnalytics,
+    IconRouteSquare,
+    IconStack2,
 } from "@tabler/icons-react";
 import { Blocks } from "lucide-react";
 import Link from "next/link";
@@ -18,13 +18,13 @@ import { NavMain } from "@/components/nav-main";
 import { SidebarActiveBlocks } from "@/components/sidebar-active-blocks";
 import { SidebarFooterLegal } from "@/components/sidebar-footer-legal";
 import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
 const navData = {
@@ -93,7 +93,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </div>
                 <span className="flex flex-col">
                   <span className="text-sm font-semibold leading-tight">
-                    TradeBlocks
+                    NemoAnalytics
                   </span>
                   <span className="text-xs text-muted-foreground">
                     Analytics Platform

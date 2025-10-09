@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { getAllBlocks, getBlock, updateBlock as dbUpdateBlock, deleteBlock as dbDeleteBlock, getTradesByBlock, getDailyLogsByBlock } from '../db'
+import { deleteBlock as dbDeleteBlock, updateBlock as dbUpdateBlock, getAllBlocks, getBlock, getDailyLogsByBlock, getTradesByBlock } from '../db'
 import { ProcessedBlock } from '../models/block'
 // import { PortfolioStatsCalculator } from '../calculations/portfolio-stats'
 
@@ -101,7 +101,7 @@ export const useBlockStore = create<BlockStore>((set, get) => ({
 
     try {
       // Restore active block ID from localStorage
-      const savedActiveBlockId = localStorage.getItem('tradeblocks-active-block-id')
+  const savedActiveBlockId = localStorage.getItem('nemoanalytics-active-block-id')
 
       const processedBlocks = await getAllBlocks()
       const blocks: Block[] = []
@@ -162,8 +162,8 @@ export const useBlockStore = create<BlockStore>((set, get) => ({
 
   // Actions
   setActiveBlock: (blockId: string) => {
-    // Save to localStorage for persistence
-    localStorage.setItem('tradeblocks-active-block-id', blockId)
+  // Save to localStorage for persistence
+  localStorage.setItem('nemoanalytics-active-block-id', blockId)
 
     set(state => ({
       blocks: state.blocks.map(block => ({
@@ -176,7 +176,7 @@ export const useBlockStore = create<BlockStore>((set, get) => ({
 
   clearActiveBlock: () => {
     // Remove from localStorage
-    localStorage.removeItem('tradeblocks-active-block-id')
+    localStorage.removeItem('nemoanalytics-active-block-id')
 
     set(state => ({
       blocks: state.blocks.map(block => ({
@@ -206,7 +206,7 @@ export const useBlockStore = create<BlockStore>((set, get) => ({
       set(state => {
         if (newBlock.isActive) {
           // If new block is active, deactivate all others and set new one as active
-          localStorage.setItem('tradeblocks-active-block-id', newBlock.id)
+          localStorage.setItem('nemoanalytics-active-block-id', newBlock.id)
           console.log('Set active block in localStorage:', newBlock.id)
           return {
             blocks: [
@@ -276,7 +276,7 @@ export const useBlockStore = create<BlockStore>((set, get) => ({
 
         // If we deleted the active block, clear localStorage
         if (wasActive) {
-          localStorage.removeItem('tradeblocks-active-block-id')
+          localStorage.removeItem('nemoanalytics-active-block-id')
         }
 
         return {

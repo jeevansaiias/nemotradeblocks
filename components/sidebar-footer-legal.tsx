@@ -7,18 +7,18 @@ import Link from "next/link";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTrigger,
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTrigger,
 } from "@/components/ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
 
 const disclaimerSections = [
   {
     title: "Educational & Research Purposes Only",
-    body: "TradeBlocks is designed for educational exploration and research analysis of trading strategies. Nothing within this platform constitutes investment advice, trading recommendations, or financial guidance of any kind.",
+  body: "NemoAnalytics is designed for educational exploration and research analysis of trading strategies. Nothing within this platform constitutes investment advice, trading recommendations, or financial guidance of any kind.",
     accent: "text-destructive",
   },
   {
@@ -28,7 +28,7 @@ const disclaimerSections = [
   },
   {
     title: "Software & Technical Limitations",
-    body: "Like all software, TradeBlocks may contain errors, bugs, or unexpected behaviors. Our algorithms make assumptions that may not align with your specific trading circumstances. Historical performance analysis cannot predict future market outcomes.",
+  body: "Like all software, NemoAnalytics may contain errors, bugs, or unexpected behaviors. Our algorithms make assumptions that may not align with your specific trading circumstances. Historical performance analysis cannot predict future market outcomes.",
     accent: "text-secondary-foreground",
   },
   {
@@ -38,7 +38,7 @@ const disclaimerSections = [
   },
   {
     title: "Privacy & Data Handling",
-    body: "TradeBlocks operates entirely in your browser using local storage, indexDB, and session cookies to maintain your data and preferences. We do not transmit, store, or access your trading data on external servers.",
+  body: "NemoAnalytics operates entirely in your browser using local storage, IndexedDB, and session cookies to maintain your data and preferences. We do not transmit, store, or access your trading data on external servers.",
     accent: "text-muted-foreground",
   },
 ];
@@ -94,21 +94,21 @@ export function SidebarFooterLegal() {
                 </div>
                 <div className="flex items-center justify-center gap-2 rounded-2xl bg-muted px-4 py-3 text-sm font-semibold italic text-muted-foreground">
                   <ShieldQuestion className="h-4 w-4" aria-hidden />
-                  Remember: TradeBlocks builds insights, not investment advice.
+                  Remember: NemoAnalytics builds insights, not investment advice.
                 </div>
               </div>
             </DialogContent>
           </Dialog>
         </div>
       </Alert>
-      <p className="inline-flex items-center gap-1 text-[0.68rem] italic text-muted-foreground">
+        <p className="inline-flex items-center gap-1 text-[0.68rem] italic text-muted-foreground">
         <Sparkles
           className="h-3.5 w-3.5 text-muted-foreground/70"
           aria-hidden
         />
-        TradeBlocks builds insights, not investment advice.
+        NemoAnalytics builds insights, not investment advice.
       </p>
-      <div className="flex flex-wrap items-center gap-2 text-[0.7rem] text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-2 text-[0.7rem] text-muted-foreground">
         <Link
           href="https://ninjata.co/"
           target="_blank"

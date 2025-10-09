@@ -1,16 +1,16 @@
 "use client";
 
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
 } from "@/components/ui/card";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
@@ -201,7 +201,7 @@ export function ChartWrapper({
       modeBarButtonsToRemove: [],
       toImageButtonOptions: {
         format: "png" as const,
-        filename: `tradeblocks-${title.toLowerCase().replace(/\s+/g, "-")}`,
+  filename: `nemoanalytics-${title.toLowerCase().replace(/\s+/g, "-")}`,
         height: 600,
         width: 1000,
         scale: 2,

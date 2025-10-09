@@ -1,4 +1,4 @@
-name: TradeBlocks CI
+name: NemoAnalytics CI
 
 on:
   push:
