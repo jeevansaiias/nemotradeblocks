@@ -1,33 +1,33 @@
 "use client";
 
-import { useEffect, useState } from 'react'
-import { useBlockStore } from '@/lib/stores/block-store'
-import { usePerformanceStore, type DateRange } from '@/lib/stores/performance-store'
-import { AlertTriangle, Loader2, Calendar } from 'lucide-react'
+import { useBlockStore } from '@/lib/stores/block-store';
+import { usePerformanceStore, type DateRange } from '@/lib/stores/performance-store';
+import { AlertTriangle, Calendar, Loader2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 // Chart Components
-import { EquityCurveChart } from '@/components/performance-charts/equity-curve-chart'
-import { DrawdownChart } from '@/components/performance-charts/drawdown-chart'
-import { DayOfWeekChart } from '@/components/performance-charts/day-of-week-chart'
-import { ReturnDistributionChart } from '@/components/performance-charts/return-distribution-chart'
-import { WinLossStreaksChart } from '@/components/performance-charts/win-loss-streaks-chart'
-import { MonthlyReturnsChart } from '@/components/performance-charts/monthly-returns-chart'
-import { TradeSequenceChart } from '@/components/performance-charts/trade-sequence-chart'
-import { RollingMetricsChart } from '@/components/performance-charts/rolling-metrics-chart'
-import { RiskEvolutionChart } from '@/components/performance-charts/risk-evolution-chart'
-import { ROMTimelineChart } from '@/components/performance-charts/rom-timeline-chart'
+import { DayOfWeekChart } from '@/components/performance-charts/day-of-week-chart';
+import { DrawdownChart } from '@/components/performance-charts/drawdown-chart';
+import { EquityCurveChart } from '@/components/performance-charts/equity-curve-chart';
+import { MonthlyReturnsChart } from '@/components/performance-charts/monthly-returns-chart';
+import { ReturnDistributionChart } from '@/components/performance-charts/return-distribution-chart';
+import { RiskEvolutionChart } from '@/components/performance-charts/risk-evolution-chart';
+import { RollingMetricsChart } from '@/components/performance-charts/rolling-metrics-chart';
+import { ROMTimelineChart } from '@/components/performance-charts/rom-timeline-chart';
+import { TradeSequenceChart } from '@/components/performance-charts/trade-sequence-chart';
+import { WinLossStreaksChart } from '@/components/performance-charts/win-loss-streaks-chart';
 
 // UI Components
-import { MultiSelect } from '@/components/multi-select'
-import { Label } from '@/components/ui/label'
-import { Badge } from '@/components/ui/badge'
+import { MultiSelect } from '@/components/multi-select';
+import { Badge } from '@/components/ui/badge';
+import { Label } from '@/components/ui/label';
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select';
 
 export default function PerformanceBlocksPage() {
   const [isInitialized, setIsInitialized] = useState(false)
@@ -136,7 +136,7 @@ export default function PerformanceBlocksPage() {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="text-center max-w-md">
-          <AlertTriangle className="h-12 w-12 text-red-500 mx-auto mb-4" />
+          <AlertTriangle className="h-12 w-12 text-secondary-500 mx-auto mb-4" />
           <h3 className="text-lg font-semibold mb-2">Error Loading Performance Data</h3>
           <p className="text-muted-foreground mb-4">{error}</p>
         </div>

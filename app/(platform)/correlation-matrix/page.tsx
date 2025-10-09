@@ -267,7 +267,7 @@ export default function CorrelationMatrixPage() {
               </div>
               <div className="hidden sm:block text-muted-foreground">•</div>
               <div className="flex items-center gap-2">
-                <Badge variant="outline" className="border-orange-500 bg-orange-500/10 text-orange-700 dark:text-orange-400 font-medium">
+                <Badge variant="outline" className="border-accent-500 bg-accent-500/10 text-accent-700 dark:text-accent-400 font-medium">
                   SPEARMAN/KENDALL
                 </Badge>
                 <span className="text-muted-foreground">

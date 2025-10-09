@@ -1,19 +1,19 @@
 "use client";
 
 import {
-  IconArrowsShuffle,
-  IconCheck,
-  IconFileSpreadsheet,
-  IconRefresh,
+    IconArrowsShuffle,
+    IconCheck,
+    IconFileSpreadsheet,
+    IconRefresh,
 } from "@tabler/icons-react";
 import { useState } from "react";
 
 import { BlockSwitchDialog } from "@/components/block-switch-dialog";
 import { Button } from "@/components/ui/button";
 import {
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarGroupLabel,
 } from "@/components/ui/sidebar";
 import { type Block } from "@/lib/stores/block-store";
 
@@ -43,7 +43,7 @@ export function SidebarActiveBlocks({ activeBlock }: { activeBlock: Block }) {
         <div className="rounded-xl border border-border/60 bg-sidebar-accent/40 p-3 backdrop-blur-sm">
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <IconCheck className="size-4 rounded-full text-emerald-600 dark:text-emerald-400" />
+              <IconCheck className="size-4 rounded-full text-muted-600 dark:text-muted-400" />
               <p className="text-sm font-semibold text-sidebar-foreground">
                 {activeBlock.name}
               </p>

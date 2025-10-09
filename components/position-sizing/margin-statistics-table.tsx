@@ -5,20 +5,20 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Card } from "@/components/ui/card";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
 } from "@/components/ui/table";
-import { StrategyAnalysis } from "./strategy-results";
 import { HelpCircle } from "lucide-react";
+import { StrategyAnalysis } from "./strategy-results";
 
 interface MarginStatistic {
   name: string;
@@ -267,8 +267,8 @@ export function MarginStatisticsTable({
                   <TableCell
                     className={`text-right ${
                       stat.projectedMargin <= stat.allocated
-                        ? "text-blue-600"
-                        : "text-orange-600"
+                        ? "text-primary-600"
+                        : "text-accent-600"
                     }`}
                   >
                     {stat.projectedMargin.toFixed(1)}%
@@ -292,8 +292,8 @@ export function MarginStatisticsTable({
                   <TableCell
                     className={`text-right text-sm ${
                       stat.projectedMargin <= stat.allocated
-                        ? "text-blue-600"
-                        : "text-orange-600"
+                        ? "text-primary-600"
+                        : "text-accent-600"
                     }`}
                   >
                     {stat.projectedMargin.toFixed(1)}%
@@ -311,9 +311,9 @@ export function MarginStatisticsTable({
         <Alert>
           <AlertDescription className="text-xs">
             <strong>Color coding:</strong>{" "}
-            <span className="text-blue-600 font-medium">Blue</span> = Expected margin
+            <span className="text-primary-600 font-medium">Primary</span> = Expected margin
             ≤ Allocated capital (good).{" "}
-            <span className="text-orange-600 font-medium">Orange</span> = Expected
+            <span className="text-accent-600 font-medium">Accent</span> = Expected
             margin &gt; Allocated capital (may need more capital or lower Kelly %).
           </AlertDescription>
         </Alert>

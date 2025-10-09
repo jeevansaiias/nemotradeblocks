@@ -1063,8 +1063,8 @@ export function BlockDialog({
           {fileState.status === "processing" && fileState.file ? (
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded">
-                  <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
+                <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded">
+                  <Loader2 className="w-5 h-5 text-primary-600 animate-spin" />
                 </div>
                 <div className="flex-1">
                   <p className="font-medium">{fileState.file.name}</p>
@@ -1087,8 +1087,8 @@ export function BlockDialog({
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  <div className="p-2 bg-muted-100 dark:bg-muted-900/30 rounded">
+                    <CheckCircle className="w-5 h-5 text-muted-600" />
                   </div>
                   <div>
                     <p className="font-medium">{fileState.file.name}</p>
@@ -1149,8 +1149,8 @@ export function BlockDialog({
           ) : fileState.status === "existing" && fileState.existingFileName ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded">
-                  <Icon className="w-5 h-5 text-blue-600" />
+                <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded">
+                  <Icon className="w-5 h-5 text-primary-600" />
                 </div>
                 <div>
                   <p className="font-medium">{fileState.existingFileName}</p>
@@ -1171,14 +1171,14 @@ export function BlockDialog({
             </div>
           ) : fileState.status === "error" ? (
             <div className="flex items-start gap-3 text-left">
-              <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-full">
-                <AlertCircle className="w-5 h-5 text-red-600" />
+              <div className="p-2 bg-secondary-100 dark:bg-secondary-900/30 rounded-full">
+                <AlertCircle className="w-5 h-5 text-secondary-600" />
               </div>
               <div className="space-y-1">
-                <p className="text-sm font-medium text-red-700 dark:text-red-400">
+                <p className="text-sm font-medium text-secondary-700 dark:text-secondary-400">
                   {errorHeading}
                 </p>
-                <p className="text-sm text-red-600 dark:text-red-300 leading-snug">
+                <p className="text-sm text-secondary-600 dark:text-secondary-300 leading-snug">
                   {errorMessage || fileState.error}
                 </p>
                 <p className="text-xs text-muted-foreground">
@@ -1211,7 +1211,7 @@ export function BlockDialog({
               <span>Strategy name required</span>
               <Badge
                 variant="outline"
-                className="text-xs text-amber-900 dark:text-amber-200 border-amber-400/70"
+                className="text-xs text-accent-900 dark:text-accent-200 border-accent-400/70"
               >
                 {missingStrategyCount} trade
                 {missingStrategyCount === 1 ? "" : "s"}
@@ -1241,12 +1241,12 @@ export function BlockDialog({
               </Button>
             </div>
             {!strategyOverride.trim() && (
-              <p className="text-xs text-amber-800 dark:text-amber-300">
+              <p className="text-xs text-accent-800 dark:text-accent-300">
                 Entry required before you can create the block.
               </p>
             )}
             {strategyOverride.trim() && (
-              <p className="text-xs text-amber-800/80 dark:text-amber-300/80">
+              <p className="text-xs text-accent-800/80 dark:text-accent-300/80">
                 Applying &quot;{strategyOverride.trim()}&quot; to{" "}
                 {missingStrategyCount} trade
                 {missingStrategyCount === 1 ? "" : "s"}.
@@ -1322,13 +1322,13 @@ export function BlockDialog({
             {isProcessing && (
               <div className="bg-primary/20 dark:bg-primary/20 border border-primary/60 dark:border-primary/80 rounded-lg p-4">
                 <div className="flex items-center gap-3">
-                  <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
+                  <Loader2 className="w-5 h-5 text-primary-600 animate-spin" />
                   <div>
-                    <p className="font-medium text-blue-900 dark:text-blue-100">
+                    <p className="font-medium text-primary-900 dark:text-primary-100">
                       Processing Files
                     </p>
                     {processingStep && (
-                      <p className="text-sm text-blue-700 dark:text-blue-300">
+                      <p className="text-sm text-primary-700 dark:text-primary-300">
                         {processingStep}
                       </p>
                     )}
@@ -1341,12 +1341,12 @@ export function BlockDialog({
             {processingErrors.length > 0 && (
               <div className="bg-secondary/20 dark:bg-secondary/20 border border-secondary/60 dark:border-secondary/80 rounded-lg p-4">
                 <div className="flex items-start gap-3">
-                  <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                  <AlertCircle className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
                   <div className="space-y-2">
-                    <p className="font-medium text-red-900 dark:text-red-100">
+                    <p className="font-medium text-secondary-900 dark:text-secondary-100">
                       Processing Errors
                     </p>
-                    <ul className="text-sm text-red-700 dark:text-red-300 space-y-1">
+                    <ul className="text-sm text-secondary-700 dark:text-secondary-300 space-y-1">
                       {processingErrors.map((error, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <span className="text-secondary">•</span>

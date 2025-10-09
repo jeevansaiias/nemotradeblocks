@@ -5,9 +5,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Separator } from "@/components/ui/separator";
 import { KellyMetrics } from "@/lib/calculations/kelly";
@@ -122,13 +122,13 @@ export function StrategyResults({
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <p className="text-xs text-muted-foreground">Average Win</p>
-                  <p className="text-sm font-semibold text-green-600">
+                  <p className="text-sm font-semibold text-muted-600">
                     {avgWinDisplay}
                   </p>
                 </div>
                 <div className="space-y-1 text-right">
                   <p className="text-xs text-muted-foreground">Average Loss</p>
-                  <p className="text-sm font-semibold text-red-600">
+                  <p className="text-sm font-semibold text-secondary-600">
                     {avgLossDisplay}
                   </p>
                 </div>

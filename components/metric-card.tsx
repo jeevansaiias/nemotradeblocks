@@ -60,8 +60,8 @@ export function MetricCard({
   const getValueColor = () => {
     if (isPositive === undefined) return "text-foreground";
     return isPositive
-      ? "text-green-600 dark:text-green-400"
-      : "text-red-600 dark:text-red-400";
+  ? "text-muted-600 dark:text-muted-400"
+  : "text-secondary-600 dark:text-secondary-400";
   };
 
   const getTrendIcon = () => {
